@@ -9,7 +9,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 public class CrossConfig {
 
 //    @Value("${frontend.url}")
-    private String frontend="http://localhost:5173";
+    private String frontend="https://ev-charger-dashboard.vercel.app";
 
     @Bean
     public WebMvcConfigurer webMvcConfigurer(){
