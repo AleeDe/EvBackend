@@ -31,7 +31,7 @@ public class DeviceController {
         return ResponseEntity.ok(deviceService.save(device));
     }
 
-    @CrossOrigin(origins = "http://localhost:5173")
+    @CrossOrigin(origins = "https://ev-charger-dashboard.vercel.app")
     @GetMapping("/{deviceId}")
     public ResponseEntity<Device> getDevice(@PathVariable String deviceId) {
         return deviceService.getByDeviceId(deviceId)
