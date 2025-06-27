@@ -44,7 +44,7 @@ public class AuthController {
             // ✅ Create refresh token cookie
             ResponseCookie cookie = ResponseCookie.from("refreshToken", refreshToken)
                     .httpOnly(true)
-                    .secure(false) // ✅ true in production
+                    .secure(true) // ✅ true in production
                     .path("/")
                     .maxAge(7 * 24 * 60 * 60)
                     .sameSite("Lax")
@@ -74,7 +74,7 @@ public class AuthController {
 
             ResponseCookie cookie = ResponseCookie.from("refreshToken", refreshToken)
                     .httpOnly(true)
-                    .secure(false) // set to true in production with HTTPS
+                    .secure(true) // set to true in production with HTTPS
                     .path("/")
                     .maxAge(7 * 24 * 60 * 60)
                     .sameSite("Lax")
@@ -97,7 +97,7 @@ public class AuthController {
 
         ResponseCookie cookie = ResponseCookie.from("refreshToken", refreshToken)
                 .httpOnly(true)
-                .secure(false) // set to true in production with HTTPS
+                .secure(true) // set to true in production with HTTPS
                 .path("/")
                 .maxAge(7 * 24 * 60 * 60)
                 .sameSite("Lax")
@@ -113,7 +113,7 @@ public class AuthController {
         // 🍪 Create an expired cookie to clear refresh token
         ResponseCookie deleteCookie = ResponseCookie.from("refreshToken", "")
                 .httpOnly(true)
-                .secure(false) // should be true in production
+                .secure(true) // should be true in production
                 .path("/") // must match original path
                 .maxAge(0) // deletes the cookie
                 .sameSite("Lax")
